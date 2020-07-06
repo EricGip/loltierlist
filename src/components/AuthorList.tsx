@@ -1,11 +1,12 @@
 import React from "react";
-import { Droppable, Draggable, DroppableProvided } from "react-beautiful-dnd";
+import { Droppable, Draggable } from "react-beautiful-dnd";
 import { Row } from "../types";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+
 import { Avatar } from "@material-ui/core";
+import { generate } from "shortid";
 
 const useStyles = makeStyles(theme => ({
   Paper: {
@@ -62,7 +63,7 @@ export const AuthorList: React.FC<Props> = ({
         <div>
           <TextField
             className={classes.Textfield}
-            id="outlined-basic"
+            id={generate()}
             label="Tier Name"
             variant="outlined"
             value={row.label}
@@ -122,7 +123,6 @@ export const AuthorList: React.FC<Props> = ({
                     {...dragProvided.draggableProps}
                     ref={dragProvided.innerRef}
                   >
-                    
                     <Avatar
                       // className={classes.Paper}
                       // style={{ backgroundColor: url }}
@@ -130,7 +130,7 @@ export const AuthorList: React.FC<Props> = ({
                       // elevation={10}
                       style={{
                         height: "60px",
-                        width: "60px",
+                        width: "60px"
                       }}
                       src={url}
                     >

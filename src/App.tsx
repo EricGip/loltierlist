@@ -11,10 +11,15 @@ import support from "./data/support.json";
 import { AuthorList } from "./components/AuthorList";
 import { generate } from "shortid";
 import Button from "@material-ui/core/Button";
-import { AppBar, Toolbar, TextField, Typography, IconButton } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  TextField,
+  IconButton
+} from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from "@material-ui/core/Tooltip";
 
 const aId = generate();
 
@@ -97,27 +102,25 @@ function App() {
               }}
             />
 
-          <Tooltip title="Links to GitHub">
-            <IconButton
-              aria-label="hello"
-              edge="end"
-              href={GitHub}
-              target="_blank"
-            >
-              <GitHubIcon
-                style={{
-                  color: "#89CFF0",
-                  position: "absolute",
-                  right: "5px",
-                  fontSize: 50,
-                  overflow: "auto"
-                }}
-              />
-            </IconButton>
+            <Tooltip title="Links to GitHub">
+              <IconButton
+                aria-label="hello"
+                edge="end"
+                href={GitHub}
+                target="_blank"
+              >
+                <GitHubIcon
+                  style={{
+                    color: "#89CFF0",
+                    position: "absolute",
+                    right: "5px",
+                    fontSize: 50,
+                    overflow: "auto"
+                  }}
+                />
+              </IconButton>
             </Tooltip>
-            
           </Toolbar>
-
 
           {/* <GitHubIcon
             style={{
